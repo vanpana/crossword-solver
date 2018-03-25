@@ -1,2 +1,4 @@
+from Problem import Problem
+
 if __name__ == '__main__':
-    print("Hello world!")
+    problem = Problem("../data/first.crossword")
