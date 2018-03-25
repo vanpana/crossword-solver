@@ -1,4 +1,7 @@
-from Problem import Problem
+from Algorithm import Algorithm
+from Individ import Individ
 
 if __name__ == '__main__':
-    problem = Problem("../data/first.crossword")
+    algorithm = Algorithm("../data/first.crossword")
+
+    algorithm.population = [Individ(len(algorithm.problem.words)) for _ in range(10)]

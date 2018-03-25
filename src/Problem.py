@@ -9,7 +9,6 @@ class Problem:
         self.filename = filename
 
         self.__initialize_data()
-        pass
 
     def __read_from_file(self):
         with open(self.filename, "r") as file:

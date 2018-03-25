@@ -1,7 +1,10 @@
+from random import shuffle
+
+
 class Individ:
-    def __init__(self, size, x):
-        self.size = size
-        self.x = x
+    def __init__(self, noWords):
+        self.data = [x for x in range(noWords)]
+        shuffle(self.data)
 
     def fitness(self):
         pass  # TODO: return float

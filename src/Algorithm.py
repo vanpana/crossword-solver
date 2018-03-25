@@ -1,12 +1,13 @@
-class Algorithm:
-    def __init__(self, problem, data, population, filename):
-        self.problem = problem
-        self.data = data
-        self.population = population
-        self.filename = filename
+from Problem import Problem
 
-    def read_file(self, filename):
-        pass  # TODO
+
+class Algorithm:
+    def __init__(self, filename):
+        self.filename = filename
+        self.problem = self.read_file()
+
+    def read_file(self):
+        return Problem(self.filename)
 
     def iteration(self):
         pass  # TODO
