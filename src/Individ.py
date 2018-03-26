@@ -10,6 +10,9 @@ class Individ:
         points = 0
         counter = 0
 
+        if self.data == [2, 3, 1, 6, 0, 5, 4]:
+            print("ok")
+
         for location in problem.location:
             empty_length = location[0].distance(location[1])
             word_length = len(problem.words[self.data[counter]])
@@ -24,9 +27,9 @@ class Individ:
             points = points * -1
         return points
 
-    def mutate(self, probability=0.5):
-        # if probability < uniform(0, 1):
-        #     return self
+    def mutate(self, probability=0.7):
+        if probability < uniform(0, 1):
+            return self
 
         l1 = randint(0, len(self.data) // 2)
 
