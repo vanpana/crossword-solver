@@ -8,7 +8,7 @@ if __name__ == '__main__':
 
     probability = 0.01
     algorithm.population = [Individ(len(algorithm.problem.words)) for _ in range(10)]
-    algorithm.perfect_fitness = sum([len(x) for x in algorithm.problem.words])
+    algorithm.perfect_fitness = sum([len(x) for x in algorithm.problem.words]) + len(algorithm.problem.location)
 
     solution = algorithm.run()
 
