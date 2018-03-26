@@ -3,9 +3,6 @@ class Point:
         self.x = x
         self.y = y
 
-    def __eq__(self, other):
-        return type(other) == type(self) and self.x == other.x and self.y == other.y
-
     def distance(self, other):
         if self.x == other.x:
             return abs(self.y - other.y) + 1
@@ -25,8 +22,20 @@ class Point:
                 return p1.x <= self.x <= p2.x
             return p2.x <= self.x <= p1.x
 
+    def get_points_in_between(self, point):
+        if self.x == point.x:
+            for y in range(self.y, point.y):
+                yield Point(self.x, y)
+
+        else:
+            for x in range(self.x, point.x):
+                yield Point(x, self.y)
+
+    def __eq__(self, other):
+        return type(other) == type(self) and self.x == other.x and self.y == other.y
+
     def __str__(self):
-        return "{0}, {1}".format(self.x, self.y)
+        return "({0}, {1})".format(self.x, self.y)
 
     def __repr__(self):
         return str(self)
