@@ -2,8 +2,8 @@ from random import shuffle, randint, uniform
 
 
 class Individ:
-    def __init__(self, noWords):
-        self.data = [x for x in range(noWords)]
+    def __init__(self, no_words):
+        self.data = [x for x in range(no_words)]
         shuffle(self.data)
 
     def fitness(self, problem):
@@ -15,30 +15,33 @@ class Individ:
             word_length = len(problem.words[self.data[counter]])
 
             if empty_length == word_length:
-                points += 1
+                points += word_length
 
             # TODO Check intersections
             counter += 1
+
+        if len(set(self.data)) != len(self.data):
+            points = points * -1
         return points
 
-    def mutate(self, probability=0.2):
-        if probability < uniform(0,1):
-            return self
+    def mutate(self, probability=0.5):
+        # if probability < uniform(0, 1):
+        #     return self
 
-        l1 = randint(0, len(self.data) / 2)
+        l1 = randint(0, len(self.data) // 2)
 
         l2 = l1
         while l2 == l1:
-            l2 = randint(0, len(self.data) / 2)
+            l2 = randint(0, len(self.data) // 2)
 
         if l2 < l1:
             l1, l2 = l2, l1
 
-        r1 = randint(len(self.data) / 2 + 1, len(self.data) - 1)
+        r1 = randint(len(self.data) // 2 + 1, len(self.data))
         r2 = r1
 
         while r2 == r1:
-            r2 = randint(len(self.data) / 2 + 1, len(self.data) - 1)
+            r2 = randint(len(self.data) // 2 + 1, len(self.data))
 
         if r2 < r1:
             r1, r2 = r2, r1
@@ -50,26 +53,44 @@ class Individ:
         mutated_data.extend(self.data[l1:l2])
         mutated_data.extend(self.data[r2:])
 
-        self.data = mutated_data
-        return self
+        mutant = Individ(len(mutated_data))
+        mutant.data = mutated_data
+        return mutant
 
-    def crossover(self, other, probability=0.2):
-        if probability < uniform(0,1):
-            return self
+    def crossover(self, other, probability=0.5):
+        # if probability < uniform(0, 1):
+        #     return self
 
-        left = randint(0, len(self.data) / 2)
+        left = randint(0, len(self.data) // 2)
 
         right = left
         while right == left:
-            right = randint(0, len(self.data) / 2)
+            right = randint(len(self.data) // 2, len(self.data) + 1)
 
         if right < left:
             left, right = right, left
 
-        self.data[left:right] = other.data[left:right]
-        return self
+        crossed_over = [None for _ in range(len(self.data))]
+        crossed_over[left:right] = self.data[left:right]
 
-    def print(self, problem):
-        for number in self.data:
-            print(problem.words[number], end=" ")
-        print()
+        replacement_counter = 0
+        for counter in range(len(crossed_over)):
+            if crossed_over[counter] is None:
+                while other.data[replacement_counter] in crossed_over:
+                    replacement_counter += 1
+                crossed_over[counter] = other.data[replacement_counter]
+
+        child = Individ(len(crossed_over))
+        child.data = crossed_over
+        return child
+
+    # def print(self, problem):
+    #     for number in self.data:
+    #         print(problem.words[number], end=" ")
+    #     print()
+
+    def __str__(self):
+        return str(self.data)
+
+    def __repr__(self):
+        return str(self)

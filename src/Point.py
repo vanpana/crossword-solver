@@ -8,8 +8,8 @@ class Point:
 
     def distance(self, other):
         if self.x == other.x:
-            return abs(self.y - other.y)
-        return abs(self.x - other.x)
+            return abs(self.y - other.y) + 1
+        return abs(self.x - other.x) + 1
 
     def between(self, p1, p2):
         if p1 == p2:
