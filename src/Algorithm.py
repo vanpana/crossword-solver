@@ -41,7 +41,7 @@ class Algorithm:
 
             print(child.data, fc)
 
-            return sum(temp) // len(self.population)
+            return sum(temp) / len(self.population)
 
     def get_two(self):
         podium = [(self.population[x], x) for x in range(len(self.population))]
@@ -58,20 +58,21 @@ class Algorithm:
 
     def run(self):
         fitness_avg = []
-        for _ in range(self.noIterations):
+        for counter in range(self.noIterations):
             child = self.iteration()
 
-            if child is not None and type(child) != int:
+            if child is not None and (type(child) != float and type(child) != int):
+                self.plot(counter, fitness_avg)
                 return child
 
             fitness_avg.append(child)
 
-        self.plot(fitness_avg)
+        self.plot(self.noIterations, fitness_avg)
 
 
-    def plot(self, avg):
-        pyplot.plot(range(len(avg)), avg)
-        pyplot.axis([0, self.noIterations, min(avg), max(avg)])
+    def plot(self, steps, avg):
+        pyplot.plot(range(len(avg)), avg, 'ro')
+        pyplot.axis([0, steps, min(avg), max(avg)])
         pyplot.show()
 
     def statistics(self):
