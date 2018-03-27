@@ -1,3 +1,5 @@
+import numpy
+
 from Algorithm import Algorithm
 from Individ import Individ
 
@@ -15,17 +17,30 @@ def get_fitness(problem):
 
 # ans day: 2 3 1 6 0 5 4
 if __name__ == '__main__':
-    algorithm = Algorithm(999999999, "../data/days.crossword")
-    # algorithm = Algorithm(20000, "../data/first.crossword")
+    repetition = 1
+    most_fit = []
 
-    probability = 0.01
-    algorithm.population = [Individ(len(algorithm.problem.words)) for _ in range(10)]
-    algorithm.perfect_fitness = get_fitness(algorithm.problem)
+    for rep in range(repetition):
+        print("======================={0}=======================".format(rep))
+        # algorithm = Algorithm(999999999, "../data/days.crossword")
+        # algorithm = Algorithm(1000, "../data/first.crossword")
+        algorithm = Algorithm(20000, "../data/random.crossword")
 
-    solution = algorithm.run()
+        probability = 0.01
+        algorithm.population = [Individ(len(algorithm.problem.words)) for _ in range(40)]
+        algorithm.perfect_fitness = get_fitness(algorithm.problem)
 
-    if solution is not None:
-        for element in solution.data:
-            print(element)
+        solution = algorithm.run()
+
+        most_fit.append(algorithm.most_fit)
+
+        if solution is not None:
+            for element in solution.data:
+                print(element)
+
+    print(most_fit)
+
+    print(numpy.std(most_fit))
+
 
 

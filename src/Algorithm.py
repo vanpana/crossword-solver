@@ -13,6 +13,7 @@ class Algorithm:
         self.population = None
         self.noIterations = noIterations
         self.perfect_fitness = -1
+        self.most_fit = 0
 
     def read_file(self):
         return Problem(self.filename)
@@ -38,6 +39,13 @@ class Algorithm:
                 self.population[i1] = child
             if fc >= f2 >= f1:
                 self.population[i2] = child
+
+            if f1 > self.most_fit:
+                self.most_fit = f1
+            elif f2 > self.most_fit:
+                self.most_fit = f2
+            elif fc > self.most_fit:
+                self.most_fit = fc
 
             print(child.data, fc)
 
@@ -70,8 +78,9 @@ class Algorithm:
         self.plot(self.noIterations, fitness_avg)
 
 
+
     def plot(self, steps, avg):
-        pyplot.plot(range(len(avg)), avg, 'ro')
+        pyplot.plot(range(len(avg)), avg)
         pyplot.axis([0, steps, min(avg), max(avg)])
         pyplot.show()
 
