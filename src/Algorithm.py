@@ -1,5 +1,7 @@
 import copy
 from random import randint, shuffle
+import matplotlib.pyplot
+from matplotlib import pyplot
 
 from Problem import Problem
 
@@ -17,9 +19,8 @@ class Algorithm:
 
     def iteration(self):
 
-        # self.population = [x[0] for x in sorted(
-        #     [(self.population[i], self.population[i].fitness(self.problem)) for i in range(len(self.population))],
-        #     key=lambda x: x[1], reverse=True)]
+        temp = [x[1] for x in
+                [(self.population[i], self.population[i].fitness(self.problem)) for i in range(len(self.population))]]
 
         i1, i2 = self.get_two()
 
@@ -38,14 +39,9 @@ class Algorithm:
             if fc >= f2 >= f1:
                 self.population[i2] = child
 
-            # if child != self.population[i1] and child != self.population[i2] and (fc >= f1 or fc >= f2):
-            # if fc != 0:
-            #     self.population[-1] = child
             print(child.data, fc)
-            # if fc > f1 > f2:
-            #     self.population[i1] = child
-            # if fc > f2 > f1:
-            #     self.population[i2] = child
+
+            return sum(temp) // len(self.population)
 
     def get_two(self):
         podium = [(self.population[x], x) for x in range(len(self.population))]
@@ -60,13 +56,23 @@ class Algorithm:
 
         return podium[0][1], podium[1][1]
 
-
     def run(self):
+        fitness_avg = []
         for _ in range(self.noIterations):
             child = self.iteration()
 
-            if child is not None:
+            if child is not None and type(child) != int:
                 return child
+
+            fitness_avg.append(child)
+
+        self.plot(fitness_avg)
+
+
+    def plot(self, avg):
+        pyplot.plot(range(len(avg)), avg)
+        pyplot.axis([0, self.noIterations, min(avg), max(avg)])
+        pyplot.show()
 
     def statistics(self):
         pass  # TODO
