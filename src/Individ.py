@@ -27,22 +27,13 @@ class Individ:
             for i in range(len(problem.location) - 1):
                 for j in range(i + 1, len(problem.location)):
                     for coordinate in problem.location[i][0].get_points_in_between(problem.location[i][1]):
-                        if coordinate.between(problem.location[j][0], problem.location[j][1]):  # == problem.location[j]:
+                        if coordinate.between(problem.location[j][0], problem.location[j][1]):
 
                             x = coordinate.y - problem.location[i][0].y
                             y = coordinate.x - problem.location[j][0].x
-                            if x >= len(problem.words[self.data[i]]):
-                                print(self.data, coordinate.x)
 
-                            if y >= len(problem.words[self.data[j]]):
-                                print(self.data, coordinate.y)
-
-                            try:
-                                if problem.words[self.data[i]][x] == problem.words[self.data[j]][y]:
-                                    print(self.data, problem.location[i], problem.location[j])
-                                    points += 1
-                            except IndexError:
-                                pass
+                            if problem.words[self.data[i]][x] == problem.words[self.data[j]][y]:
+                                points += 1
 
         return points
 
