@@ -26,6 +26,7 @@ class Individ:
         if points == sum([len(x) for x in problem.words]):
             for i in range(len(problem.location) - 1):
                 for j in range(i + 1, len(problem.location)):
+
                     for coordinate in problem.location[i][0].get_points_in_between(problem.location[i][1]):
                         if coordinate.between(problem.location[j][0], problem.location[j][1]):
 
@@ -37,7 +38,7 @@ class Individ:
 
         return points
 
-    def mutate(self, probability=0.7):
+    def mutate(self, probability=0.01):
         if probability < uniform(0, 1):
             return self
 

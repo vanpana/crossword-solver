@@ -9,6 +9,7 @@ def get_fitness(problem):
 
     for i in range(len(problem.location) - 1):
         for j in range(i + 1, len(problem.location)):
+
             for coordinate in problem.location[i][0].get_points_in_between(problem.location[i][1]):
                 if coordinate.between(problem.location[j][0], problem.location[j][1]):
                     fitness += 1
@@ -17,14 +18,14 @@ def get_fitness(problem):
 
 # ans day: 2 3 1 6 0 5 4
 if __name__ == '__main__':
-    repetition = 1
+    repetition = 30
     most_fit = []
 
     for rep in range(repetition):
         print("======================={0}=======================".format(rep))
         # algorithm = Algorithm(999999999, "../data/days.crossword")
-        # algorithm = Algorithm(1000, "../data/first.crossword")
-        algorithm = Algorithm(20000, "../data/random.crossword")
+        algorithm = Algorithm(2500, "../data/first.crossword")
+        # algorithm = Algorithm(2500, "../data/random.crossword")
 
         probability = 0.01
         algorithm.population = [Individ(len(algorithm.problem.words)) for _ in range(40)]
