@@ -3,6 +3,7 @@ from random import randint, shuffle
 import matplotlib.pyplot
 from matplotlib import pyplot
 
+
 from Problem import Problem
 
 

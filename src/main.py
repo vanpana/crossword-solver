@@ -18,13 +18,13 @@ def get_fitness(problem):
 
 # ans day: 2 3 1 6 0 5 4
 if __name__ == '__main__':
-    repetition = 30
+    repetition = 1
     most_fit = []
 
     for rep in range(repetition):
         print("======================={0}=======================".format(rep))
-        # algorithm = Algorithm(999999999, "../data/days.crossword")
-        algorithm = Algorithm(2500, "../data/first.crossword")
+        # algorithm = Algorithm(1000, "../data/days.crossword")
+        algorithm = Algorithm(100000, "../data/first.crossword")
         # algorithm = Algorithm(2500, "../data/random.crossword")
 
         probability = 0.01

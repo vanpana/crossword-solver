@@ -71,7 +71,7 @@ class Individ:
         mutant.data = mutated_data
         return mutant
 
-    def crossover(self, other, probability=0.5):
+    def crossover(self, other, probability=0.01):
         # if probability < uniform(0, 1):
         #     return self
 
