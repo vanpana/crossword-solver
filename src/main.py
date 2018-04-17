@@ -2,6 +2,7 @@ import numpy
 
 from Algorithm import Algorithm
 from Individ import Individ
+import matplotlib.pyplot as plt
 
 def get_fitness(problem):
     problem = problem

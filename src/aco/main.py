@@ -1,6 +1,7 @@
 import copy
 
 from aco.Controller import Controller
+import matplotlib.pyplot as plt
 
 
 def get_fitness(problem):
@@ -18,8 +19,8 @@ def get_fitness(problem):
 
 
 if __name__ == '__main__':
-    no_epoch = 2000
-    no_ants = 10
+    no_epoch = 5000
+    no_ants = 100
     alpha = 1.9
     beta = 0.9
     rho = 0.05
@@ -35,6 +36,8 @@ if __name__ == '__main__':
     best_sol_fitness = 0
     trace = [[1 for i in range(len(controller.problem.words))] for j in range(len(controller.problem.words))]
 
+    sol_list = []
+
     for i in range(no_epoch):
         sol = controller.epoch(no_ants, controller.problem.words, trace, alpha, beta, q0, rho)
 
@@ -45,5 +48,11 @@ if __name__ == '__main__':
             if sol_fitness > best_sol_fitness:
                 best_sol = copy.deepcopy(sol)
                 best_sol_fitness = sol_fitness
+
+                sol_list.append(sol_fitness)
+
+    plt.plot([x for x in range(len(sol_list))], sol_list)
+    # plt.axis([0, 6, 0, 20])
+    plt.show()
 
     print("Best sol for run is: {0}".format(best_sol))
