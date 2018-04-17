@@ -15,6 +15,7 @@ class Ant:
             return self.words_indices.pop(rand)
 
     def pop_word(self, indice):
+        print("POPPING: " + str(indice))
         counter = 0
         for w_indice in self.words_indices:
             if w_indice == indice:
@@ -22,7 +23,15 @@ class Ant:
             else:
                 counter += 1
 
-    def add_move(self, q0, trace, alpha, beta):
+    def distance_move(self, word_indice, problem):
+        target_location = problem.location[len(self.path)]
+
+        empty_length = target_location[0].distance(target_location[1])
+        word_length = len(problem.words[word_indice])
+
+        return abs(empty_length - word_length)
+
+    def add_move(self, problem, q0, trace, alpha, beta):
         p = [0 for _ in range(self.size)]
 
         next_steps = self.words_indices.copy()
@@ -31,20 +40,24 @@ class Ant:
             return False
 
         for i in next_steps:
-            p[i] = 1  # TODO distance?
+            p[i] = self.distance_move(i, problem)
 
-        p = [(p[i] ** beta) * (trace[self.path[-1]][i]**alpha) for i in range(len(p))]
+        p = [(p[i] ** beta) * (trace[self.path[-1]][i] ** alpha) for i in range(len(p))]
+
+        print("NEXT STEPS: " + str(next_steps))
 
         if random() < q0:
-            p = [[i, p[i]] for i in range(len(p))]
-            p = max(p, key=lambda a: a[1])
-            self.path.append(p[0])
+            print("RANDOMIZED")
+            p = [[i, p[i]] for i in next_steps]
+            p = min(p, key=lambda a: a[1])
+            self.path.append(self.pop_word(p[0]))
         else:
+            print("SUMMING")
             s = sum(p)
             if s == 0:
                 return choice(next_steps)
-            p = [p[i]/s for i in range(len(p))]
-            p = [sum(p[0:i+1]) for i in range(len(p))]
+            p = [p[i] / s for i in range(len(p))]
+            p = [sum(p[0:i + 1]) for i in range(len(p))]
             r = random()
             i = 0
             while r > p[i]:
@@ -62,6 +75,9 @@ class Ant:
             print("ok")
 
         for location in problem.location:
+            if counter > len(self.path) - 1:
+                break
+
             empty_length = location[0].distance(location[1])
             word_length = len(problem.words[self.path[counter]])
 

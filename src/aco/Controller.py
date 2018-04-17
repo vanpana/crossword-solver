@@ -19,7 +19,7 @@ class Controller:
 
         for i in range(len(words)):
             for x in ants:
-                x.add_move(q0, trace, alpha, beta)
+                x.add_move(self.problem, q0, trace, alpha, beta)
 
         d_trace = [0 if ants[i].fitness(self.problem) == 0 else 1.0 / ants[i].fitness(self.problem) for i in range(len(ants))]
         for i in range(len(words)):

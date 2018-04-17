@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb646ac1-3b6c-4f30-8c2b-73858932c1c2" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/aco/Ant.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/aco/Controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/aco/Problem.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/aco/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/aco/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/crossword-solver.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/crossword-solver.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Algorithm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Point.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/aco/Point.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Population.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Problem.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aco/Ant.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/aco/Ant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aco/Controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/aco/Controller.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,16 +13,19 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/crossword_solver$main__1_.coverage" NAME="aco Coverage Results" MODIFIED="1523955533246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/aco" />
+    <SUITE FILE_PATH="coverage/crossword_solver$main__1_.coverage" NAME="aco Coverage Results" MODIFIED="1523956854710" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/aco" />
     <SUITE FILE_PATH="coverage/crossword_solver$main.coverage" NAME="main Coverage Results" MODIFIED="1523954404492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Ant.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Ant.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/aco/Ant.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-330">
-              <caret line="36" selection-start-line="36" selection-end-line="36" />
+            <state relative-caret-position="205">
+              <caret line="47" selection-start-line="47" selection-end-line="47" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -40,8 +33,8 @@
       <file leaf-file-name="Controller.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aco/Controller.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+            <state relative-caret-position="315">
+              <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -49,11 +42,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aco/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="39" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="493">
+              <caret line="45" column="45" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -67,15 +63,6 @@
                 <element signature="e#453#920#0" />
                 <element signature="e#1880#2738#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Point.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aco/Point.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -117,8 +104,8 @@
         <option value="$PROJECT_DIR$/src/aco/Problem.py" />
         <option value="$PROJECT_DIR$/src/Population.py" />
         <option value="$PROJECT_DIR$/src/aco/main.py" />
-        <option value="$PROJECT_DIR$/src/aco/Ant.py" />
         <option value="$PROJECT_DIR$/src/aco/Controller.py" />
+        <option value="$PROJECT_DIR$/src/aco/Ant.py" />
       </list>
     </option>
   </component>
@@ -263,7 +250,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3540856" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3540856" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32879376" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12916666" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
@@ -271,7 +258,7 @@
       <window_info anchor="right" id="SciView" order="3" weight="0.1234375" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39980546" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39980546" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -295,6 +282,16 @@
           <line>84</line>
           <option name="timeStamp" value="134" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/aco/Ant.py</url>
+          <line>25</line>
+          <option name="timeStamp" value="145" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/aco/Ant.py</url>
+          <line>38</line>
+          <option name="timeStamp" value="147" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -303,7 +300,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="144" />
+      <option name="time" value="148" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -600,13 +597,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/aco/Point.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Population.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -645,10 +635,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/aco/Ant.py">
+    <entry file="file://$PROJECT_DIR$/src/aco/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-330">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="493">
+          <caret line="45" column="45" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aco/Point.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
@@ -665,18 +665,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aco/Controller.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        <state relative-caret-position="315">
+          <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/aco/main.py">
+    <entry file="file://$PROJECT_DIR$/src/aco/Ant.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="205">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
