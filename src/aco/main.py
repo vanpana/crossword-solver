@@ -18,8 +18,8 @@ def get_fitness(problem):
 
 
 if __name__ == '__main__':
-    no_epoch = 100
-    no_ants = 3
+    no_epoch = 2000
+    no_ants = 10
     alpha = 1.9
     beta = 0.9
     rho = 0.05

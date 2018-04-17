@@ -15,7 +15,6 @@ class Ant:
             return self.words_indices.pop(rand)
 
     def pop_word(self, indice):
-        print("POPPING: " + str(indice))
         counter = 0
         for w_indice in self.words_indices:
             if w_indice == indice:
@@ -44,15 +43,11 @@ class Ant:
 
         p = [(p[i] ** beta) * (trace[self.path[-1]][i] ** alpha) for i in range(len(p))]
 
-        print("NEXT STEPS: " + str(next_steps))
-
         if random() < q0:
-            print("RANDOMIZED")
             p = [[i, p[i]] for i in next_steps]
             p = min(p, key=lambda a: a[1])
             self.path.append(self.pop_word(p[0]))
         else:
-            print("SUMMING")
             s = sum(p)
             if s == 0:
                 return choice(next_steps)
