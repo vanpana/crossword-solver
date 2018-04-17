@@ -1,6 +1,4 @@
-import copy
-from random import randint, shuffle
-import matplotlib.pyplot
+from random import  shuffle
 from matplotlib import pyplot
 
 

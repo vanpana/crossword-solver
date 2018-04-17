@@ -1,4 +1,4 @@
-from Point import Point
+from aco.Point import Point
 
 
 class Problem:
